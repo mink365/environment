@@ -1,0 +1,4 @@
+environment
+===========
+
+bashrc zshrc vimrc
