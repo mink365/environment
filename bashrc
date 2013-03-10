@@ -2,7 +2,18 @@
 #-------------------------------
 # PATH and Librory
 #-------------------------------
-PATH=~/bin:/home/kou/workspace/qt/qt5/qtbase/bin/:/home/kou/workspace/android_sdk/android-sdk-linux/platform-tools/:$PATH
+ANDROID_ROOT=~/workspace/android/
+export NDK_ROOT=$ANDROID_ROOT/android-ndk-r8d/
+
+LLVM_ROOT=~/workspace/llvm/build/Release+Asserts/
+
+QT5_ROOT=~/workspace/qt/qt5/
+
+export PATH=~/bin:$QT5_ROOTqt/qt5/qtbase/bin/:$ANDROID_ROOT/sdk/platform-tools/:$LLVM_ROOT/bin:$PATH
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LLVM_ROOT/lib/
+
+export EDITOR=vim
 
 shopt -s histappend
 PROMPT_COMMAND='history -a'
@@ -74,5 +85,5 @@ extract() {
 #----------------------
 # Colored PS
 #---------------------
-PS1='\n\[\033[0;32m\]\u@\h \[\033[1;33m\]\w\n\[\033[0m\]> '
+PS1='\[\033[0;32m\]\u@\h \[\033[1;33m\]\w\n\[\033[0m\]> '
 PS2='\\ '
